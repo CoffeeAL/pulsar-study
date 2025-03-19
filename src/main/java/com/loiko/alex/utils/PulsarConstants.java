@@ -9,6 +9,7 @@ public interface PulsarConstants {
     String TENANT = "my-tenant";
     String NAMESPACE = TENANT + "/my-namespace";
     String TOPIC = PERSISTENT_DOMAIN + NAMESPACE + "/my-topic";
+    String DLQ_TOPIC = PERSISTENT_DOMAIN + NAMESPACE + "/my-dlq-topic";
 
     String ROLE = "admin";
     String CLUSTER = "standalone";
