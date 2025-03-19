@@ -46,7 +46,7 @@ public interface ConsumerUtils {
                 .consumerName("default-consumer-name")
                 .messageListener((consumer, message) -> { //non-blocking
                     try {
-                        LogHolder.log.info("{} received message: {}", consumer.getConsumerName(), new String(message.getData()));
+                        LogHolder.log.info("Message received by consumer {}: {}", consumer.getConsumerName(), new String(message.getData()));
                         consumer.acknowledge(message);
                     } catch (PulsarClientException exception) {
                         exception.printStackTrace();
@@ -80,7 +80,7 @@ public interface ConsumerUtils {
         while (true) {
             try {
                 Message<byte[]> message = consumer.receive(); //blocking
-                LogHolder.log.info("Message received: {}", new String(message.getData()));
+                LogHolder.log.info("Message received by consumer: {}", new String(message.getData()));
                 acknowledgeMessage(consumer, message);
             } catch (Exception exception) {
                 return;

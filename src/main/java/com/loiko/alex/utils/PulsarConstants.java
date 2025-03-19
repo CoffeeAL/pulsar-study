@@ -15,4 +15,6 @@ public interface PulsarConstants {
     String CLUSTER = "standalone";
 
     String SUBSCRIPTION_NAME = "my-subscription";
+
+    String READER_NAME = "my-reader";
 }
